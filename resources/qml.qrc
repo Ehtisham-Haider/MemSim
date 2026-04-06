@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file alias="main.qml">../qml/main.qml</file>
+        <file alias="MainWindow.qml">../qml/MainWindow.qml</file>
+
+        <file alias="pages/SimulationPage.qml">../qml/pages/SimulationPage.qml</file>
+        <file alias="pages/AllAlgorithmsPage.qml">../qml/pages/AllAlgorithmsPage.qml</file>
+        <file alias="pages/StressTestPage.qml">../qml/pages/StressTestPage.qml</file>
+        <file alias="pages/ComparativePage.qml">../qml/pages/ComparativePage.qml</file>
+        <file alias="pages/EventLogPage.qml">../qml/pages/EventLogPage.qml</file>
+
+        <file alias="components/Sidebar.qml">../qml/components/Sidebar.qml</file>
+        <file alias="components/MemoryMapView.qml">../qml/components/MemoryMapView.qml</file>
+        <file alias="components/MemoryBlockRect.qml">../qml/components/MemoryBlockRect.qml</file>
+        <file alias="components/AddressRuler.qml">../qml/components/AddressRuler.qml</file>
+        <file alias="components/FragmentationPanel.qml">../qml/components/FragmentationPanel.qml</file>
+        <file alias="components/EventLogPanel.qml">../qml/components/EventLogPanel.qml</file>
+        <file alias="components/MetricBar.qml">../qml/components/MetricBar.qml</file>
+        <file alias="components/ComparisonTable.qml">../qml/components/ComparisonTable.qml</file>
+        <file alias="components/StatsCard.qml">../qml/components/StatsCard.qml</file>
+        <file alias="components/NextFitCursor.qml">../qml/components/NextFitCursor.qml</file>
+
+        <file alias="dialogs/AllocateDialog.qml">../qml/dialogs/AllocateDialog.qml</file>
+        <file alias="dialogs/DeallocateDialog.qml">../qml/dialogs/DeallocateDialog.qml</file>
+
+        <file alias="style/Theme.qml">../qml/style/Theme.qml</file>
+        <file alias="style/AppStyle.qml">../qml/style/AppStyle.qml</file>
+        <file alias="style/qmldir">../qml/style/qmldir</file>
+    </qresource>
+</RCC>

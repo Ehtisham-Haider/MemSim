@@ -1,0 +1,16 @@
+# Build artifacts
+build/
+cmake-build-*/
+out/
+
+# Qt / generated files
+*.pro.user
+*.user
+*.autosave
+
+# IDE
+.vscode/*.log
+
+# OS
+.DS_Store
+Thumbs.db
