@@ -9,6 +9,7 @@ Item {
     property string selectedAlgorithm: "All"
     property var allStates: []
     property var eventLog: []
+    property var currentState: ({})
 
     signal allocateClicked()
     signal deallocateClicked()
@@ -21,6 +22,17 @@ Item {
         }
         return root.allStates[0]
     }
+
+    function refreshCurrentState() {
+        const state = root.selectedState()
+        root.currentState = state ? state : ({})
+    }
+
+    onAllStatesChanged: refreshCurrentState()
+    onSelectedAlgorithmChanged: {
+        refreshCurrentState()
+    }
+    Component.onCompleted: refreshCurrentState()
 
     ColumnLayout {
         anchors.fill: parent
@@ -45,8 +57,8 @@ Item {
         MemoryMapView {
             Layout.fillWidth: true
             Layout.preferredHeight: 220
-            blocks: (root.selectedState() ? root.selectedState().blocks : [])
-            nextFitCursor: (root.selectedState() && root.selectedAlgorithm === "Next-Fit") ? root.selectedState().nextFitCursor : -1
+            blocks: root.currentState.blocks || []
+            nextFitCursor: (root.currentState && root.selectedAlgorithm === "Next-Fit") ? (root.currentState.nextFitCursor || -1) : -1
         }
 
         Rectangle {
@@ -69,7 +81,7 @@ Item {
 
                     ListView {
                         width: parent.width
-                        model: root.selectedState() ? root.selectedState().blocks : []
+                        model: root.currentState.blocks || []
                         delegate: RowLayout {
                             width: ListView.view.width
                             spacing: 12
@@ -92,7 +104,7 @@ Item {
             FragmentationPanel {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                state: root.selectedState() || ({})
+                reportData: root.currentState
             }
 
             EventLogPanel {

@@ -12,6 +12,7 @@
 class SimulationController : public QObject {
     Q_OBJECT
     Q_PROPERTY(QVariantList allAlgorithmStates READ allAlgorithmStates NOTIFY stateChanged)
+    Q_PROPERTY(QVariantList fragmentationReports READ getFragmentationReports NOTIFY stateChanged)
     Q_PROPERTY(QVariantList eventLog READ eventLog NOTIFY eventLogChanged)
     Q_PROPERTY(bool simulationRunning READ simulationRunning NOTIFY simulationRunningChanged)
     Q_PROPERTY(QVariantMap comparativeReport READ comparativeReport NOTIFY comparativeReportChanged)

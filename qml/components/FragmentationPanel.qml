@@ -5,7 +5,7 @@ import "../style"
 
 Rectangle {
     id: root
-    property var state: ({})
+    property var reportData: ({})
 
     radius: 8
     color: Theme.panelSurface
@@ -21,11 +21,11 @@ Rectangle {
             spacing: 4
 
             Label { text: "Fragmentation Report"; color: Theme.textPrimary; font.bold: true }
-            Label { text: "Total Free: " + (state.totalFreeKB || 0) + " KB"; color: Theme.textSecondary }
-            Label { text: "Free Blocks: " + (state.freeBlockCount || 0); color: Theme.textSecondary }
-            Label { text: "Largest: " + (state.largestFreeBlockKB || 0) + " KB"; color: Theme.textSecondary }
-            Label { text: "External Fragmentation: " + ((state.externalFragmentation || false) ? "YES" : "NO"); color: Theme.textSecondary }
-            Label { text: "Ratio: " + Number(state.fragmentationRatio || 0).toFixed(2); color: Theme.textSecondary }
+            Label { text: "Total Free: " + (reportData.totalFreeKB || 0) + " KB"; color: Theme.textSecondary }
+            Label { text: "Free Blocks: " + (reportData.freeBlockCount || 0); color: Theme.textSecondary }
+            Label { text: "Largest: " + (reportData.largestFreeBlockKB || 0) + " KB"; color: Theme.textSecondary }
+            Label { text: "External Fragmentation: " + ((reportData.externalFragmentation || false) ? "YES" : "NO"); color: Theme.textSecondary }
+            Label { text: "Ratio: " + Number(reportData.fragmentationRatio || 0).toFixed(2); color: Theme.textSecondary }
         }
     }
 }

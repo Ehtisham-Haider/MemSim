@@ -10,6 +10,15 @@ Rectangle {
     property string selectedAlgorithm: "All"
     property var allStates: []
 
+    function selectedState() {
+        if (root.allStates.length === 0) return null
+        if (root.selectedAlgorithm === "All") return root.allStates[0]
+        for (let i = 0; i < root.allStates.length; ++i) {
+            if (root.allStates[i].algorithm === root.selectedAlgorithm) return root.allStates[i]
+        }
+        return root.allStates[0]
+    }
+
     signal selectedAlgorithmChangedByUser(string algorithmName)
     signal allocateClicked()
     signal deallocateClicked()
@@ -61,9 +70,10 @@ Rectangle {
             Label {
                 color: Theme.textPrimary
                 text: {
-                    const state = root.allStates.length > 0 ? root.allStates[0] : null
+                    const state = root.selectedState()
                     const free = state ? state.totalFreeKB : 0
-                    return "Total 1024 KB\nFree " + free + " KB"
+                    const algo = state ? state.algorithm : ""
+                    return (algo ? algo + "\n" : "") + "Total 1024 KB\nFree " + free + " KB"
                 }
             }
 

@@ -16,14 +16,6 @@ Item {
             height: parent.height
 
             Rectangle { width: 1; height: 10; color: Theme.textSecondary }
-            Label {
-                visible: index % 2 === 0
-                y: 10
-                x: -10
-                text: (index * 100)
-                color: Theme.textSecondary
-                font.pixelSize: 10
-            }
         }
     }
 
